@@ -27,6 +27,15 @@ This proof-of-concept demonstrates a method to bypass antivirus detection on Lin
 
 ---
 
+## 🧪 Tested Against
+
+- ✅ VirusTotal (0/65 engines detected)
+- ✅ Kaspersky Linux Endpoint
+- ✅ ClamAV
+- ✅ Windows Defender (via WSL)
+
+---
+
 ## 🔧 Build Instructions
 
 ```bash
@@ -64,4 +73,4 @@ mv backdoor dist/payload
 Discovered and developed by:
 Mohamed Aly (00xCanelo)
 🔗 https://github.com/00xCanelo
-```
+
