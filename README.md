@@ -23,7 +23,7 @@ This proof-of-concept demonstrates a method to bypass antivirus detection on Lin
 | `build.sh` | Simple build script using Nuitka |
 | `dist/payload` | Final compiled ELF binary |
 | `vt-scan.jpg` | VirusTotal scan result showing 0 detections |
-| `backdoor` | The Backdoor in the virus total sha256: df60a181ceba07d35350fb7d754f239685996b40ea24d155a82344f7fd52b651
+| `backdoor` | The Backdoor in the virus total  sha256: df60a181ceba07d35350fb7d754f239685996b40ea24d155a82344f7fd52b651|
 
 ---
 
@@ -73,7 +73,7 @@ python -m nuitka --onefile --standalone --remove-output --output-filename=backdo
 mkdir -p dist
 mv backdoor dist/payload
 ```
----
+
 👤 Credits
 
 Discovered and developed by:
