@@ -35,7 +35,13 @@ This proof-of-concept demonstrates a method to bypass antivirus detection on Lin
 - ✅ Windows Defender (via WSL)
 
 ---
+## Proof of Concept
 
+The following scan result shows no AV detected the compiled ELF:
+
+![VirusTotal Scan](https://raw.githubusercontent.com/00xCanelo/ELF-AV-Bypass/refs/heads/main/vt-scan.png)
+
+---
 ## 🔧 Build Instructions
 
 ```bash
